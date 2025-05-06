@@ -7,12 +7,7 @@ bool debugging_enabled;
 LUA_FUNCTION_STATIC(EnableNetworkDebugging) {
 	LUA->CheckType(1, GarrysMod::Lua::Type::BOOL);
 	debugging_enabled = LUA->GetBool(1);
-	if (debugging_enabled) {
-		printf("enabled debugging\n");
-	}
-	else {
-		printf("disable debugging\n");
-	}
+	printf("%s debugging\n", debugging_enabled ? "enabled" : "disabled");
 	return 0;
 }
 
